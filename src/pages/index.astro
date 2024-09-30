@@ -1,28 +1,31 @@
 ---
+
 ---
 
 <head>
-	<title>Chart with Day.js and Chart.js</title>
-  
-	<!-- Load Chart.js from cdnjs CDN (v4.0.1) -->
-	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.min.js"></script>
-  
-	<!-- Load Day.js from cdnjs CDN (latest version) -->
-	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
-  
-	<!-- Load Chart.js Day.js Adapter from cdnjs CDN (v3.0.0) -->
-	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-dayjs/3.0.0/chartjs-adapter-dayjs.umd.min.js"></script>
-  
-	<!-- Link the JavaScript file that plots the chart -->
-	<script defer type="module" src="/src/plotChart.js"></script>
-  </head>
-  
-  <body>
-	<h1>Chart Example</h1>
-  
-	<!-- Canvas for the Chart -->
-	<div class="chart-container">
-	  <canvas id="myChart" width="400" height="200"></canvas>
-	</div>
-  </body>
-  
+  <title>Chart with Day.js and Chart.js</title>
+
+  <!-- Load Chart.js from cdnjs CDN (v4.0.1) -->
+  <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.min.js"
+  ></script>
+
+  <!-- Load Day.js from cdnjs CDN (latest version) -->
+  <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+  ></script>
+
+  <!-- Link the JavaScript file that plots the chart -->
+  <script defer type="module" src="/src/plotChart.js"></script>
+</head>
+
+<body>
+  <h1>Chart Example</h1>
+
+  <!-- Canvas for the Chart -->
+  <div class="chart-container">
+    <canvas id="myChart" width="400" height="200"></canvas>
+  </div>
+</body>
