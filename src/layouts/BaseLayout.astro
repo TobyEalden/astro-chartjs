@@ -1,0 +1,89 @@
+<!-- src/layouts/BaseLayout.astro -->
+---
+const { title = "Your App" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
+<head>
+  <meta charset="UTF-8">
+  <title>{title}</title>
+  
+  <!-- Tailwind CSS via compiled CSS -->
+  <link href="/styles.css" rel="stylesheet">
+  
+  <!-- Flowbite CSS via CDN -->
+  <link href="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet">
+  
+  <!-- Additional Head Content (Scripts) -->
+  <slot name="head"></slot>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Flowbite Navbar -->
+  <nav class="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded shadow">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+      <a href="/" class="flex items-center">
+        <img src="/logo.png" class="h-6 mr-3 sm:h-9" alt="Your App Logo" />
+        <span class="self-center text-xl font-semibold whitespace-nowrap">Your App</span>
+      </a>
+      <div class="flex space-x-4 items-center">
+        <a href="/financialChart" class="text-blue-700 dark:text-blue-400 font-medium">Financial Chart</a>
+        <!-- Dark Mode Toggle Button -->
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 rounded-lg text-sm p-2.5">
+          <!-- Dark Mode Icon -->
+          <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <!-- Light Mode Icon -->
+          <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 1.78a1 1 0 011.415 0l.707.707a1 1 0 11-1.414 1.414l-.708-.707a1 1 0 010-1.414zM18 9a1 1 0 100-2h-1a1 1 0 100 2h1zM15.657 14.343a1 1 0 011.414 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-1.78a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.708-.707a1 1 0 011.414 0zM2 9a1 1 0 100-2H1a1 1 0 100 2h1zM4.343 4.343a1 1 0 010 1.414L3.636 6.464a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <slot></slot>
+  </main>
+
+  <!-- Include Flowbite JS via CDN -->
+  <script defer src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Initialize theme based on localStorage or system preference
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      darkIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      lightIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden');
+      lightIcon.classList.toggle('hidden');
+
+      // Toggle the theme
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+        // Dispatch themeChanged event
+        document.dispatchEvent(new CustomEvent('themeChanged', { detail: 'light' }));
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+        // Dispatch themeChanged event
+        document.dispatchEvent(new CustomEvent('themeChanged', { detail: 'dark' }));
+      }
+    });
+  </script>
+</body>
+</html>

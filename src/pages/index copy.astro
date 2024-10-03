@@ -38,15 +38,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- Client-side Script -->
   <script type="module">
+    // Handle search input on pressing "Enter"
     async function handleSearch(event) {
-      if (event.key === 'Enter') { // Trigger search only on "Enter" key press
+      if (event.key === 'Enter') { // Only trigger search on "Enter" key
         const query = event.target.value.trim();
         const resultsContainer = document.getElementById('search-results');
 
-        // Log the query and the API route before sending the request
-        console.log("Query being typed:", query);
-        const apiRoute = `/api/searchCompanies?q=${encodeURIComponent(query)}`;
-        console.log("API route being called:", apiRoute);
+        // Log the query before sending the request to debug
+        console.log("Query being sent:", query);
 
         if (query.length === 0) {
           resultsContainer.innerHTML = '';
@@ -67,19 +66,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         resultsContainer.classList.remove('hidden');
 
         try {
-          // Log the start of the fetch request
-          console.log(`Sending request to ${apiRoute}`);
-          
-          // Send the query to your own API route, where the API call happens server-side
-          const response = await fetch(apiRoute);
+          // Send the query to the API endpoint
+          console.log(`Sending request to /api/searchCompanies?q=${encodeURIComponent(query)}`);
+          const response = await fetch(`/api/searchCompanies?q=${encodeURIComponent(query)}`);
 
-          // Log the full response object for debugging
-          console.log("Response received from API:", response);
-
-          // Check if the response is JSON
+          // Check if the response is of the expected content type
           const contentType = response.headers.get('content-type');
-          console.log("Content-Type of the response:", contentType);
-
           if (!contentType || !contentType.includes('application/json')) {
             const textResponse = await response.text();
             console.error('Unexpected response format:', textResponse);
@@ -88,7 +80,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           }
 
           const companies = await response.json();
-          console.log("Parsed JSON response:", companies);
 
           if (companies.error) {
             resultsContainer.innerHTML = `<p class="p-2 text-red-500 dark:text-red-300">${companies.error}</p>`;
@@ -100,7 +91,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             return;
           }
 
-          // Populate search results dynamically
+          // Populate results
           const resultsHTML = companies
             .map(
               (company) => `
@@ -119,8 +110,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     }
 
-    // Attach event listener to trigger search on "Enter" key press
-    document.getElementById('company-query').addEventListener('keypress', handleSearch);
+    // Attach handler to input (key press listener)
+    document.getElementById('company-query').addEventListener('keypress', handleSearch); // Trigger on "Enter" key press
 
     // Handle company selection
     function selectCompany(companyNumber, companyTitle) {

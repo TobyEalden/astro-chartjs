@@ -1,0 +1,277 @@
+{
+  "CurrentAssets": [
+    {
+      "date": "2014-11-30",
+      "value": 292416,
+      "unit": "GBP"
+    },
+    {
+      "date": "2013-11-30",
+      "value": 35942,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 293407,
+      "unit": "GBP"
+    },
+    {
+      "date": "2015-11-30",
+      "value": 192328,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 236075,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 357799,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 448043,
+      "unit": "GBP"
+    }
+  ],
+  "NetCurrentAssetsLiabilities": [
+    {
+      "date": "2014-11-30",
+      "value": 242442,
+      "unit": "GBP"
+    },
+    {
+      "date": "2013-11-30",
+      "value": 24242,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 208609,
+      "unit": "GBP"
+    },
+    {
+      "date": "2015-11-30",
+      "value": 167846,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 202831,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 315625,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 395392,
+      "unit": "GBP"
+    }
+  ],
+  "Debtors": [
+    {
+      "date": "2014-11-30",
+      "value": 11038,
+      "unit": "GBP"
+    },
+    {
+      "date": "2013-11-30",
+      "value": 1050,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 8942,
+      "unit": "GBP"
+    },
+    {
+      "date": "2015-11-30",
+      "value": 22458,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 14022,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 161601,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 175835,
+      "unit": "GBP"
+    }
+  ],
+  "TotalAssetsLessCurrentLiabilities": [
+    {
+      "date": "2017-03-31",
+      "value": 208609,
+      "unit": "GBP"
+    },
+    {
+      "date": "2015-11-30",
+      "value": 167846,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 207286,
+      "unit": "GBP"
+    }
+  ],
+  "CashBankOnHand": [
+    {
+      "date": "2018-03-31",
+      "value": 222053,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 284465,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 196198,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 272208,
+      "unit": "GBP"
+    }
+  ],
+  "Equity": [
+    {
+      "date": "2018-03-31",
+      "value": 207186,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 208509,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 321351,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 207286,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 404154,
+      "unit": "GBP"
+    }
+  ],
+  "OtherDebtors": [
+    {
+      "date": "2018-03-31",
+      "value": 10,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 10,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 600,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 13549,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 38825,
+      "unit": "GBP"
+    }
+  ],
+  "Creditors": [
+    {
+      "date": "2018-03-31",
+      "value": 33244,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 84798,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 42174,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 52651,
+      "unit": "GBP"
+    }
+  ],
+  "OtherCreditors": [
+    {
+      "date": "2018-03-31",
+      "value": 619,
+      "unit": "GBP"
+    },
+    {
+      "date": "2017-03-31",
+      "value": 730,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 13882,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 6275,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 5695,
+      "unit": "GBP"
+    },
+    {
+      "date": "2019-03-31",
+      "value": 13872,
+      "unit": "GBP"
+    }
+  ],
+  "NetAssetsLiabilities": [
+    {
+      "date": "2019-03-31",
+      "value": 321351,
+      "unit": "GBP"
+    },
+    {
+      "date": "2018-03-31",
+      "value": 207286,
+      "unit": "GBP"
+    },
+    {
+      "date": "2020-03-31",
+      "value": 404154,
+      "unit": "GBP"
+    }
+  ]
+}
